@@ -15,13 +15,13 @@ function generateId()
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     return text;
 }
-
+app.use(express.static('public'));
 // Server conf / routes
-app.get("/", function (req, res) {
-  console.log('Request on : /');
-  res.sendFile(publicDir+"/index.html");
-  res.end();
-});
+// app.get("/", function (req, res) {
+//   console.log('Request on : /');
+//   res.sendFile(publicDir+"/index.html");
+//   res.end();
+// });
 // Server launch
 server.listen(port, function () {
 	console.info(pjson.name +' is running on 127.0.0.1:'+port+' :)');
