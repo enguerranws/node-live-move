@@ -18,12 +18,13 @@ function generateId()
 
 // Server conf / routes
 app.get("/", function (req, res) {
+  console.log('Request on : /');
   res.sendFile(publicDir+"/index.html");
   res.end();
 });
-
+app.set('port', port);
 // Server launch
-server.listen(port, function () {
+server.listen(app.get('port'), function () {
 	console.info(pjson.name +' is running on 127.0.0.1:'+port+' :)');
 
 });
