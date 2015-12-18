@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Live Move</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <style media="screen">
+      body {
+        background: #111;
+      }
+      #live-move {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 300px;
+        margin-left: -150px;
+        margin-top: -150px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <img id="live-move" src="http://lorempixel.com/300/300/" alt="" />
+
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+    var liveMoveEl = document.getElementById('live-move'),
+        socket = socket = io();
+    // Get device motion
+      window.ondevicemotion = function(ev){
+       var aigX = ev.accelerationIncludingGravity.x,
+           aigZ = ev.accelerationIncludingGravity.z,
+           aigY = ev.accelerationIncludingGravity.y;
+         // Send it to the server
+         console.log('send squareMove : '+ aigX);
+         socket.emit('sendMove', {'aigZ' : aigZ, 'aigY' : aigY, 'aigX' : aigX});
+      };
+      socket.on('getMove', function(aigVal){
+          console.log('get squareMove : '+ aigVal);
+
+          liveMoveEl.style.transform = 'rotateX('+aigVal.aigY/10+'px) rotateY('+aigVal.aigX/10+'px)';
+
+
+      });
+    </script>
+  </body>
+</html>
