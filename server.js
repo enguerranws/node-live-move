@@ -19,6 +19,7 @@ function generateId()
 // Server conf / routes
 app.get("/", function (req, res) {
   res.sendFile(publicDir+"/index.html");
+  res.end();
 });
 
 // Server launch
