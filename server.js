@@ -6,7 +6,7 @@ var http = require('http'),
     io = require('socket.io').listen(server),
     pjson = require('./package.json'),
     publicDir =  __dirname + '/public',
-    port = process.argv[2] || 5000;
+    port = process.env.PORT || 5000;
 
 function generateId()
 {
@@ -22,9 +22,8 @@ app.get("/", function (req, res) {
   res.sendFile(publicDir+"/index.html");
   res.end();
 });
-app.set('port', port);
 // Server launch
-server.listen(app.get('port'), function () {
+server.listen(port, function () {
 	console.info(pjson.name +' is running on 127.0.0.1:'+port+' :)');
 
 });
