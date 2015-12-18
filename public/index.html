@@ -36,7 +36,6 @@
     // Get device motion
 
     if(isMobile) {
-      alert('mobile');
       window.ondevicemotion = function(ev){
        var aigX = ev.accelerationIncludingGravity.x,
            aigZ = ev.accelerationIncludingGravity.z,
@@ -50,7 +49,7 @@
       socket.on('getMove', function(aigVal){
           console.log('get squareMove : '+ aigVal);
 
-          liveMoveEl.style.transform = 'rotateX('+aigVal.aigY*10+'deg) rotateY('+aigVal.aigX*10+'deg)';
+          liveMoveEl.style.transform = 'rotateX('+-aigVal.aigY*5+'deg) rotateY('+-aigVal.aigX*5+'deg)';
 
 
       });
