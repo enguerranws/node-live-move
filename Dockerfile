@@ -1,8 +1,8 @@
 FROM node:latest
 
-WORKDIR /home/enguerranws/ew-server/live-move/
+COPY ./ /app
 
-RUN ls -all
+WORKDIR /app
 
 RUN npm install && npm start
 
