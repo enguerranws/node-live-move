@@ -6,7 +6,7 @@ var http = require('http'),
     io = require('socket.io').listen(server),
     pjson = require('./package.json'),
     publicDir =  __dirname + '/public',
-    port = process.env.PORT || 5000;
+    port = process.env.PORT || 80;
 
 function generateId()
 {
