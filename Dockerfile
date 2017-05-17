@@ -4,6 +4,8 @@ COPY ./ /app
 
 WORKDIR /app
 
-RUN npm install && npm start
+RUN npm install
 
-EXPOSE 3000
+CMD npm start
+
+EXPOSE 5000
