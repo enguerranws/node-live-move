@@ -1,6 +1,6 @@
 FROM node:latest
 
-WORKDIR ./
+WORKDIR /home/enguerranws/ew-server/live-move/
 
 RUN ls -all
 
