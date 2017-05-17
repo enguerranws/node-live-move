@@ -31,7 +31,7 @@ server.listen(port, function () {
 
 // Socket EVENTS
 io.on('connection', function(socket){
-
+  console.log('io.on(connection');
   socket.on('sendMove', function(aigVal){
       console.log(aigVal);
     	aigVal.aigX = aigVal.aigX;
