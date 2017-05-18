@@ -7,26 +7,16 @@
       body {
         background: #111;
       }
-      #live-move {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 300px;
-        height: 300px;
-        margin-left: -150px;
-        margin-top: -150px;
-        display: block;
-      }
       .container {
-      width: 200px;
-      height: 200px;
-      position: relative;
-      margin: 0 auto 40px;
-      -webkit-perspective: 1000px;
-         -moz-perspective: 1000px;
-           -o-perspective: 1000px;
-              perspective: 1000px;
-    }
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin: 5em auto;
+        -webkit-perspective: 1000px;
+           -moz-perspective: 1000px;
+             -o-perspective: 1000px;
+                perspective: 1000px;
+      }
 
     #cube {
       width: 100%;
@@ -37,10 +27,10 @@
          -moz-transform-style: preserve-3d;
            -o-transform-style: preserve-3d;
               transform-style: preserve-3d;
-      /*-webkit-transition: -webkit-transform .1s;
-         -moz-transition: -moz-transform .1s;
-           -o-transition: -o-transform .1s;
-              transition: transform .1s;*/
+      -webkit-transition: -webkit-transform .2s;
+         -moz-transition: -moz-transform .2s;
+           -o-transition: -o-transform .2s;
+              transition: transform .2s;
     }
 
     #cube figure {
@@ -54,6 +44,7 @@
       font-weight: bold;
       color: white;
       text-align: center;
+      margin: 0;
     }
     #cube figure img {
       max-width: 100%;
