@@ -37,10 +37,10 @@
          -moz-transform-style: preserve-3d;
            -o-transform-style: preserve-3d;
               transform-style: preserve-3d;
-      -webkit-transition: -webkit-transform .1s;
+      /*-webkit-transition: -webkit-transform .1s;
          -moz-transition: -moz-transform .1s;
            -o-transition: -o-transform .1s;
-              transition: transform .1s;
+              transition: transform .1s;*/
     }
 
     #cube figure {
@@ -145,7 +145,7 @@
       }
 
       socket.on('getMove', function(aigVal){
-          liveMoveEl.style.transform = 'rotateX('+aigVal.aigY*5+'deg) rotateY('+-aigVal.aigX*5+'deg)';
+          liveMoveEl.style.transform = 'rotateX('+aigVal.aigY*5+'deg) rotateY('+aigVal.aigX*5+'deg)';
       });
     </script>
   </body>
